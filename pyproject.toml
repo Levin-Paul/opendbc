@@ -39,6 +39,11 @@ docs = [
 examples = [
   "inputs",
 ]
+dashboard = [
+  "fastapi",
+  "uvicorn[standard]",
+  "websockets",
+]
 
 # Dependency groups (PEP 735) are not included in the published wheel.
 # Direct URL dependencies must live here because PyPI rejects uploads whose
@@ -132,6 +137,9 @@ too-many-positional-arguments = "ignore"
 
 [tool.setuptools]
 include-package-data = true
+
+[tool.setuptools.packages.find]
+include = ["opendbc*"]
 
 [tool.setuptools.package-data]
 "opendbc.car" = ["**/*.capnp", "**/*.toml"]
