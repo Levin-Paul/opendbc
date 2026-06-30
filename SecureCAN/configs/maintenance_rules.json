@@ -1,0 +1,239 @@
+{
+  "rules": [
+    {
+      "rule_id": "maint_battery_voltage",
+      "name": "Battery Voltage Degradation",
+      "component": "battery",
+      "signal_name": "batteryVoltage",
+      "analysis_method": "linear_regression",
+      "parameters": {
+        "window_samples": 500,
+        "window_days": 30,
+        "min_samples": 50
+      },
+      "thresholds": {
+        "warning": 12.0,
+        "critical": 11.5,
+        "trend_direction": "decreasing",
+        "comparison": "below"
+      },
+      "prediction": {
+        "enabled": true,
+        "target_value": 11.8,
+        "min_confidence": 0.7
+      },
+      "alert": {
+        "severity": "WARNING",
+        "title": "Battery Voltage Trending Low",
+        "description": "Resting battery voltage is {current_value}V (was {baseline_value}V {window_days} days ago). Rate: {rate}V/day. Predicted below 12.0V in {days_to_threshold} days. Recommended action: Test battery capacity, consider replacement.",
+        "category": "maintenance"
+      }
+    },
+    {
+      "rule_id": "maint_battery_voltage_critical",
+      "name": "Battery Voltage Critical",
+      "component": "battery",
+      "signal_name": "batteryVoltage",
+      "analysis_method": "linear_regression",
+      "parameters": {
+        "window_samples": 200,
+        "window_days": 7,
+        "min_samples": 20
+      },
+      "thresholds": {
+        "warning": 11.5,
+        "critical": 11.0,
+        "trend_direction": "decreasing",
+        "comparison": "below"
+      },
+      "prediction": {
+        "enabled": false,
+        "target_value": 11.0,
+        "min_confidence": 0.0
+      },
+      "alert": {
+        "severity": "CRITICAL",
+        "title": "Battery Voltage Critical",
+        "description": "Resting battery voltage is critically low at {current_value}V. The battery may fail to start the vehicle. Recommended action: Replace battery immediately.",
+        "category": "maintenance"
+      }
+    },
+    {
+      "rule_id": "maint_dpf_pressure",
+      "name": "DPF Differential Pressure Rising",
+      "component": "dpf",
+      "signal_name": "dpfPressure",
+      "analysis_method": "linear_regression",
+      "parameters": {
+        "window_samples": 500,
+        "window_days": 30,
+        "min_samples": 50
+      },
+      "thresholds": {
+        "warning": 8.0,
+        "critical": 10.0,
+        "trend_direction": "increasing",
+        "comparison": "above"
+      },
+      "prediction": {
+        "enabled": true,
+        "target_value": 10.0,
+        "min_confidence": 0.65
+      },
+      "alert": {
+        "severity": "WARNING",
+        "title": "DPF Pressure Rising",
+        "description": "DPF differential pressure is {current_value} kPa (was {baseline_value} kPa {window_days} days ago). Rate: {rate} kPa/day. Predicted above 10 kPa in {days_to_threshold} days. Recommended action: Perform DPF regeneration, check for blockage.",
+        "category": "maintenance"
+      }
+    },
+    {
+      "rule_id": "maint_coolant_temp_variance",
+      "name": "Coolant Temperature Variance",
+      "component": "engine_coolant",
+      "signal_name": "coolantTemperature",
+      "analysis_method": "moving_average",
+      "parameters": {
+        "window_samples": 100,
+        "window_days": 7,
+        "min_samples": 20
+      },
+      "thresholds": {
+        "warning": 110,
+        "critical": 120,
+        "trend_direction": "increasing",
+        "comparison": "above"
+      },
+      "prediction": {
+        "enabled": false,
+        "target_value": 0,
+        "min_confidence": 0
+      },
+      "alert": {
+        "severity": "WARNING",
+        "title": "Coolant Temperature High",
+        "description": "Engine coolant temperature is {current_value}°C. Normal range is 80-100°C. Recommended action: Check coolant level, radiator, and cooling fan operation.",
+        "category": "maintenance"
+      }
+    },
+    {
+      "rule_id": "maint_oil_pressure",
+      "name": "Oil Pressure Anomaly",
+      "component": "engine_oil",
+      "signal_name": "oilPressure",
+      "analysis_method": "moving_average",
+      "parameters": {
+        "window_samples": 100,
+        "window_days": 30,
+        "min_samples": 50
+      },
+      "thresholds": {
+        "warning": 200,
+        "critical": 150,
+        "trend_direction": "decreasing",
+        "comparison": "below"
+      },
+      "prediction": {
+        "enabled": false,
+        "target_value": 0,
+        "min_confidence": 0
+      },
+      "alert": {
+        "severity": "CRITICAL",
+        "title": "Oil Pressure Low",
+        "description": "Engine oil pressure is {current_value} kPa (normal: 200-550 kPa). Recommended action: Check oil level, inspect for leaks, verify oil pump operation.",
+        "category": "maintenance"
+      }
+    },
+    {
+      "rule_id": "maint_alternator_voltage",
+      "name": "Alternator Output Voltage",
+      "component": "alternator",
+      "signal_name": "alternatorVoltage",
+      "analysis_method": "moving_average",
+      "parameters": {
+        "window_samples": 100,
+        "window_days": 7,
+        "min_samples": 20
+      },
+      "thresholds": {
+        "warning": 13.0,
+        "critical": 12.5,
+        "trend_direction": "decreasing",
+        "comparison": "below"
+      },
+      "prediction": {
+        "enabled": false,
+        "target_value": 0,
+        "min_confidence": 0
+      },
+      "alert": {
+        "severity": "WARNING",
+        "title": "Alternator Voltage Low",
+        "description": "Alternator output voltage is {current_value}V (normal: 13.5-14.8V). Recommended action: Check alternator belt tension, alternator output, and battery connections.",
+        "category": "maintenance"
+      }
+    },
+    {
+      "rule_id": "maint_brake_fluid_pressure",
+      "name": "Brake System Pressure Check",
+      "component": "brakes",
+      "signal_name": "brakeFluidPressure",
+      "analysis_method": "event_count",
+      "parameters": {
+        "window_samples": 1000,
+        "window_days": 90,
+        "min_samples": 100
+      },
+      "thresholds": {
+        "warning": 10000,
+        "critical": 12000,
+        "trend_direction": "increasing",
+        "comparison": "above"
+      },
+      "prediction": {
+        "enabled": false,
+        "target_value": 0,
+        "min_confidence": 0
+      },
+      "alert": {
+        "severity": "WARNING",
+        "title": "Brake Pressure Anomaly",
+        "description": "Brake fluid pressure reached {current_value} kPa during a recent braking event. Recommended action: Inspect brake pads, rotors, and brake fluid condition.",
+        "category": "maintenance"
+      }
+    },
+    {
+      "rule_id": "maint_transmission_temp",
+      "name": "Transmission Fluid Temperature",
+      "component": "transmission",
+      "signal_name": "transmissionTemperature",
+      "analysis_method": "moving_average",
+      "parameters": {
+        "window_samples": 100,
+        "window_days": 30,
+        "min_samples": 30
+      },
+      "thresholds": {
+        "warning": 100,
+        "critical": 120,
+        "trend_direction": "increasing",
+        "comparison": "above"
+      },
+      "prediction": {
+        "enabled": false,
+        "target_value": 0,
+        "min_confidence": 0
+      },
+      "alert": {
+        "severity": "WARNING",
+        "title": "Transmission Temperature High",
+        "description": "Transmission fluid temperature is {current_value}°C (normal: 60-100°C). Recommended action: Check transmission fluid level and condition, inspect for leaks.",
+        "category": "maintenance"
+      }
+    }
+  ],
+  "default_check_interval_minutes": 10,
+  "min_samples_before_analysis": 20,
+  "trend_period_days_default": 30
+}

@@ -1,0 +1,246 @@
+{
+  "vehicles": [
+    {
+      "make": "Honda",
+      "model": "Civic",
+      "years": [2016, 2017, 2018, 2019, 2020, 2021],
+      "opendbc_fingerprint": "HONDA_CIVIC",
+      "dbc_file": "honda_civic_touring_2016_can.dbc",
+      "adapter": "HondaAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Honda",
+      "model": "Accord",
+      "years": [2018, 2019, 2020, 2021, 2022],
+      "opendbc_fingerprint": "HONDA_ACCORD",
+      "dbc_file": "honda_accord_2018_can.dbc",
+      "adapter": "HondaAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Honda",
+      "model": "CR-V",
+      "years": [2017, 2018, 2019, 2020, 2021],
+      "opendbc_fingerprint": "HONDA_CRV",
+      "dbc_file": "honda_crv_2017_can.dbc",
+      "adapter": "HondaAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Toyota",
+      "model": "Camry",
+      "years": [2018, 2019, 2020, 2021, 2022],
+      "opendbc_fingerprint": "TOYOTA_CAMRY",
+      "dbc_file": "toyota_camry_2021_can.dbc",
+      "adapter": "ToyotaAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Toyota",
+      "model": "Corolla",
+      "years": [2017, 2018, 2019, 2020, 2021],
+      "opendbc_fingerprint": "TOYOTA_COROLLA",
+      "dbc_file": "toyota_corolla_2017_can.dbc",
+      "adapter": "ToyotaAdapter",
+      "status": "verified",
+      "can_bus_count": 1,
+      "notes": ""
+    },
+    {
+      "make": "Toyota",
+      "model": "RAV4",
+      "years": [2019, 2020, 2021, 2022],
+      "opendbc_fingerprint": "TOYOTA_RAV4",
+      "dbc_file": "toyota_rav4_2019_can.dbc",
+      "adapter": "ToyotaAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Toyota",
+      "model": "Prius",
+      "years": [2017, 2018, 2019, 2020, 2021],
+      "opendbc_fingerprint": "TOYOTA_PRIUS",
+      "dbc_file": "toyota_prius_2017_can.dbc",
+      "adapter": "ToyotaAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Volkswagen",
+      "model": "Golf",
+      "years": [2015, 2016, 2017, 2018, 2019, 2020],
+      "opendbc_fingerprint": "VOLKSWAGEN_GOLF",
+      "dbc_file": "vw_golf_2019_can.dbc",
+      "adapter": "VWAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Volkswagen",
+      "model": "Jetta",
+      "years": [2016, 2017, 2018, 2019, 2020],
+      "opendbc_fingerprint": "VOLKSWAGEN_JETTA",
+      "dbc_file": "vw_jetta_2018_can.dbc",
+      "adapter": "VWAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Volkswagen",
+      "model": "Passat",
+      "years": [2015, 2016, 2017, 2018, 2019],
+      "opendbc_fingerprint": "VOLKSWAGEN_PASSAT",
+      "dbc_file": "vw_passat_2017_can.dbc",
+      "adapter": "VWAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Hyundai",
+      "model": "Elantra",
+      "years": [2017, 2018, 2019, 2020, 2021],
+      "opendbc_fingerprint": "HYUNDAI_ELANTRA",
+      "dbc_file": "hyundai_elantra_2017_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Hyundai",
+      "model": "Sonata",
+      "years": [2019, 2020, 2021],
+      "opendbc_fingerprint": "HYUNDAI_SONATA",
+      "dbc_file": "hyundai_sonata_2019_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Kia",
+      "model": "Optima",
+      "years": [2017, 2018, 2019, 2020],
+      "opendbc_fingerprint": "KIA_OPTIMA",
+      "dbc_file": "kia_optima_2017_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Kia",
+      "model": "Soul",
+      "years": [2017, 2018, 2019, 2020],
+      "opendbc_fingerprint": "KIA_SOUL",
+      "dbc_file": "kia_soul_2017_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "verified",
+      "can_bus_count": 1,
+      "notes": ""
+    },
+    {
+      "make": "Subaru",
+      "model": "Outback",
+      "years": [2020, 2021, 2022],
+      "opendbc_fingerprint": "SUBARU_OUTBACK",
+      "dbc_file": "subaru_outback_2020_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Subaru",
+      "model": "Crosstrek",
+      "years": [2018, 2019, 2020, 2021],
+      "opendbc_fingerprint": "SUBARU_CROSSTREK",
+      "dbc_file": "subaru_crosstrek_2018_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "verified",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Ford",
+      "model": "Focus",
+      "years": [2016, 2017, 2018],
+      "opendbc_fingerprint": "FORD_FOCUS",
+      "dbc_file": "ford_focus_2016_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "beta",
+      "can_bus_count": 2,
+      "notes": "Limited signal decoding quality"
+    },
+    {
+      "make": "Chevrolet",
+      "model": "Volt",
+      "years": [2017, 2018, 2019],
+      "opendbc_fingerprint": "CHEVROLET_VOLT",
+      "dbc_file": "chevrolet_volt_2017_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "beta",
+      "can_bus_count": 2,
+      "notes": "HV battery signals experimental"
+    },
+    {
+      "make": "Chrysler",
+      "model": "Pacifica",
+      "years": [2018, 2019, 2020],
+      "opendbc_fingerprint": "CHRYSLER_PACIFICA",
+      "dbc_file": "chrysler_pacifica_2018_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "beta",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Mazda",
+      "model": "CX-5",
+      "years": [2019, 2020, 2021],
+      "opendbc_fingerprint": "MAZDA_CX5",
+      "dbc_file": "mazda_cx5_2019_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "beta",
+      "can_bus_count": 2,
+      "notes": ""
+    },
+    {
+      "make": "Nissan",
+      "model": "Leaf",
+      "years": [2018, 2019, 2020, 2021],
+      "opendbc_fingerprint": "NISSAN_LEAF",
+      "dbc_file": "nissan_leaf_2018_can.dbc",
+      "adapter": "GenericAdapter",
+      "status": "beta",
+      "can_bus_count": 2,
+      "notes": "HV battery signals available"
+    }
+  ],
+  "status_labels": {
+    "verified": "Full decoding verified against real vehicle captures",
+    "beta": "Decoding functional but limited testing",
+    "experimental": "DBC available but not yet tested",
+    "unsupported": "No OpenDBC definition available"
+  },
+  "total_verified": 16,
+  "total_beta": 5,
+  "total_experimental": 0,
+  "total_unsupported": "See opendbc coverage documentation",
+  "scope_note": "This file lists vehicles with OpenDBC DBC coverage (potential compatibility). Roadmap milestones reference validated adapters with confirmed real-vehicle testing. Verified status indicates full real-vehicle validation; beta status indicates functional but limited testing."
+}

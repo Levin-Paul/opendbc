@@ -1,0 +1,75 @@
+{
+  "sensor_categories": [
+    {
+      "name": "Powertrain",
+      "sensors": [
+        { "name": "engineSpeed", "unit": "rpm", "min": 0, "max": 8000, "typical_range": [600, 6500] },
+        { "name": "engineLoad", "unit": "%", "min": 0, "max": 100, "typical_range": [10, 90] },
+        { "name": "throttlePosition", "unit": "%", "min": 0, "max": 100, "typical_range": [0, 85] },
+        { "name": "intakeAirTemperature", "unit": "°C", "min": -40, "max": 120, "typical_range": [10, 60] },
+        { "name": "massAirFlow", "unit": "g/s", "min": 0, "max": 500, "typical_range": [1, 200] },
+        { "name": "fuelPressure", "unit": "kPa", "min": 0, "max": 500, "typical_range": [200, 450] },
+        { "name": "fuelLevel", "unit": "%", "min": 0, "max": 100, "typical_range": [5, 100] }
+      ]
+    },
+    {
+      "name": "Engine Cooling",
+      "sensors": [
+        { "name": "coolantTemperature", "unit": "°C", "min": -40, "max": 150, "typical_range": [80, 110] },
+        { "name": "oilTemperature", "unit": "°C", "min": -40, "max": 150, "typical_range": [70, 120] },
+        { "name": "oilPressure", "unit": "kPa", "min": 0, "max": 800, "typical_range": [200, 550] },
+        { "name": "oilLevel", "unit": "%", "min": 0, "max": 100, "typical_range": [50, 100] }
+      ]
+    },
+    {
+      "name": "Transmission",
+      "sensors": [
+        { "name": "transmissionTemperature", "unit": "°C", "min": -40, "max": 150, "typical_range": [60, 100] },
+        { "name": "turbineSpeed", "unit": "rpm", "min": 0, "max": 8000, "typical_range": [0, 6000] },
+        { "name": "transmissionGear", "unit": "", "min": 0, "max": 10, "typical_range": [1, 8] }
+      ]
+    },
+    {
+      "name": "Chassis",
+      "sensors": [
+        { "name": "vehicleSpeed", "unit": "km/h", "min": 0, "max": 320, "typical_range": [0, 130] },
+        { "name": "wheelSpeedFL", "unit": "km/h", "min": 0, "max": 320, "typical_range": [0, 130] },
+        { "name": "wheelSpeedFR", "unit": "km/h", "min": 0, "max": 320, "typical_range": [0, 130] },
+        { "name": "wheelSpeedRL", "unit": "km/h", "min": 0, "max": 320, "typical_range": [0, 130] },
+        { "name": "wheelSpeedRR", "unit": "km/h", "min": 0, "max": 320, "typical_range": [0, 130] },
+        { "name": "steeringAngle", "unit": "deg", "min": -720, "max": 720, "typical_range": [-10, 10] },
+        { "name": "brakePressure", "unit": "kPa", "min": 0, "max": 15000, "typical_range": [0, 8000] },
+        { "name": "brakeFluidLevel", "unit": "%", "min": 0, "max": 100, "typical_range": [50, 100] },
+        { "name": "tyrePressureFL", "unit": "kPa", "min": 0, "max": 400, "typical_range": [180, 280] },
+        { "name": "tyrePressureFR", "unit": "kPa", "min": 0, "max": 400, "typical_range": [180, 280] },
+        { "name": "tyrePressureRL", "unit": "kPa", "min": 0, "max": 400, "typical_range": [180, 280] },
+        { "name": "tyrePressureRR", "unit": "kPa", "min": 0, "max": 400, "typical_range": [180, 280] }
+      ]
+    },
+    {
+      "name": "Electrical",
+      "sensors": [
+        { "name": "batteryVoltage", "unit": "V", "min": 8, "max": 16, "typical_range": [12.0, 14.8] },
+        { "name": "alternatorVoltage", "unit": "V", "min": 10, "max": 16, "typical_range": [13.5, 14.8] },
+        { "name": "alternatorCurrent", "unit": "A", "min": -50, "max": 200, "typical_range": [20, 120] }
+      ]
+    },
+    {
+      "name": "Emissions",
+      "sensors": [
+        { "name": "dpfPressure", "unit": "kPa", "min": 0, "max": 20, "typical_range": [0, 10] },
+        { "name": "dpfTemperature", "unit": "°C", "min": 0, "max": 700, "typical_range": [150, 600] },
+        { "name": "lambdaSensor", "unit": "ratio", "min": 0.5, "max": 2.0, "typical_range": [0.95, 1.05] },
+        { "name": "exhaustGasTemperature", "unit": "°C", "min": 0, "max": 900, "typical_range": [100, 600] }
+      ]
+    },
+    {
+      "name": "HVAC",
+      "sensors": [
+        { "name": "ambientTemperature", "unit": "°C", "min": -40, "max": 60, "typical_range": [-10, 40] },
+        { "name": "cabinTemperature", "unit": "°C", "min": 0, "max": 50, "typical_range": [18, 28] },
+        { "name": "acPressure", "unit": "kPa", "min": 0, "max": 2000, "typical_range": [200, 1000] }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "integration": {
+    "type": "git_submodule",
+    "url": "https://github.com/commaai/opendbc",
+    "path": "opendbc",
+    "read_only": true,
+    "pinned_commit": "<TODO_COMMIT_SHA>",
+    "update_policy": "manual_review"
+  },
+  "decoder_layer": {
+    "pattern": "adapter",
+    "base_class": "BaseDecoder",
+    "interface_file": "src/services/decoder/BaseDecoder.ts",
+    "adapters_directory": "src/services/decoder/adapters/",
+    "generic_adapter": "GenericAdapter",
+    "fallback_behavior": "raw_frame_view"
+  },
+  "conversion": {
+    "script": "tools/convert_dbc.py",
+    "output_directory": "src/assets/decoder_data/",
+    "output_format": "json",
+    "generate_fingerprint_index": true,
+    "generate_vehicle_catalog": true
+  },
+  "supported_vehicles_path": "configs/supported_vehicles.json",
+  "fingerprint": {
+    "detection_method": "frame_id_frequency_match",
+    "min_frames_for_detection": 1000,
+    "max_fingerprints_to_check": 10,
+    "match_threshold": 0.85
+  },
+  "constraints": {
+    "no_modifications": true,
+    "no_custom_dbc": true,
+    "no_fork": true,
+    "coverage_gaps": "documented_in_supported_vehicles.json"
+  },
+  "build": {
+    "step_1": "checkout_submodule_pinned_commit",
+    "step_2": "run_convert_dbc_py",
+    "step_3": "generate_fingerprint_index",
+    "step_4": "bundle_with_app_build"
+  },
+  "testing": {
+    "dbc_loading_test": "each_supported_dbc_must_load",
+    "decoding_test": "known_frames_decode_to_expected_values",
+    "fingerprint_test": "auto_detection_returns_correct_profile",
+    "edge_cases": [
+      "invalid_can_ids",
+      "malformed_frames",
+      "missing_dbc_files",
+      "unsupported_vehicles"
+    ]
+  },
+  "known_limitations": [
+    "OpenDBC covers approximately 200+ vehicles, primarily those supported by comma.ai openpilot",
+    "European and Asian market vehicles have better coverage than North American trucks/SUV",
+    "DBC files may contain incomplete signal definitions for non-critical ECUs",
+    "Some DBC files use generic signal names that require vehicle-specific adapter normalisation",
+    "CAN FD is not supported in OpenDBC DBC definitions",
+    "OEM diagnostic protocols (UDS, OBD-II PIDs) are not covered by DBC definitions"
+  ],
+  "maintenance": {
+    "review_cycle": "quarterly",
+    "upstream_update_check": "weekly_automated",
+    "breaking_change_procedure": "freeze_submodule_at_previous_commit_until_compatibility_verified"
+  }
+}

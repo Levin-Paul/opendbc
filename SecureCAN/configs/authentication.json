@@ -1,0 +1,59 @@
+{
+  "authentication": {
+    "protocol": "ed25519_mutual_challenge_response",
+    "mode": "mutual",
+    "key_size_bits": 256,
+    "algorithm": "Ed25519 (RFC 8032)",
+    "hash_function": "SHA-256",
+    "nonce_size_bytes": 32,
+    "nonce_source": "CSPRNG",
+    "round_trips": 2
+  },
+  "key_lifecycle": {
+    "user_keypair": {
+      "generation": "platform_csprng",
+      "private_storage": "iOS Keychain / Android Keystore",
+      "public_storage": "SQLite (integrity only)",
+      "rotation": "user_initiated_via_settings"
+    },
+    "gateway_keypair": {
+      "generation": "first_boot_hw_rng",
+      "private_storage": "ESP32 NVS encrypted",
+      "rotation": "factory_reset"
+    },
+    "session_keys": {
+      "derivation": "HKDF-SHA256",
+      "input": "nonce_G + nonce_A + both_public_keys",
+      "storage": "in_memory_only",
+      "rotation": "per_connection"
+    }
+  },
+  "protocol": {
+    "max_attempts_per_window": 3,
+    "window_seconds": 30,
+    "timeout_ms": 5000,
+    "allowed_drift_ms": 100
+  },
+  "pairing": {
+    "methods": ["qr_code", "manual_key_entry"],
+    "out_of_band_required": true,
+    "max_paired_gateways": 10
+  },
+  "firmware_signing": {
+    "algorithm": "Ed25519",
+    "key_storage_dev": "CI_pipeline",
+    "key_storage_prod": "HSM",
+    "verification": "bootloader_enforced"
+  },
+  "ble_security": {
+    "mode": "LE Secure Connections",
+    "mitm_protection": true,
+    "legacy_fallback": false,
+    "passkey_required": true
+  },
+  "revocation": {
+    "user_action": "delete_public_key",
+    "gateway_action": "factory_reset",
+    "unpair_all": true
+  }
+}

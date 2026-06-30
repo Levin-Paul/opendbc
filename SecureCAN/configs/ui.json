@@ -1,0 +1,85 @@
+{
+  "theme": {
+    "mode": "dark",
+    "high_contrast_mode": false,
+    "colors": {
+      "primary": "#0056D6",
+      "primary_dark": "#003D99",
+      "background": "#0D1117",
+      "surface": "#161B22",
+      "text": "#E6EDF3",
+      "text_secondary": "#8B949E",
+      "border": "#30363D",
+      "success": "#3FB950",
+      "warning": "#D29922",
+      "danger": "#F85149",
+      "info": "#58A6FF"
+    },
+    "typography": {
+      "font_mono": "JetBrains Mono",
+      "font_ui": "Inter",
+      "font_heading": "Inter",
+      "sizes": {
+        "caption": 12,
+        "body": 14,
+        "body_large": 16,
+        "heading_small": 18,
+        "heading_medium": 22,
+        "heading_large": 28
+      }
+    }
+  },
+  "layout": {
+    "dashboard": {
+      "signal_card_layout": "grid_2_column",
+      "show_can_traffic_graph": true,
+      "recent_alerts_count": 3,
+      "refresh_interval_ms": 100
+    },
+    "alerts": {
+      "default_filter": "active",
+      "page_size": 20,
+      "show_acknowledged": false
+    },
+    "security": {
+      "show_ecu_list": true,
+      "show_fingerprint_details": true,
+      "show_firewall_status": true
+    },
+    "maintenance": {
+      "chart_days_default": 30,
+      "show_predictions": true,
+      "show_recommendations": true
+    }
+  },
+  "navigation": {
+    "tabs": [
+      { "name": "Dashboard", "icon": "gauge", "screen": "Dashboard" },
+      { "name": "Alerts", "icon": "bell", "screen": "Alerts" },
+      { "name": "Security", "icon": "shield", "screen": "Security" },
+      { "name": "Maintenance", "icon": "wrench", "screen": "Maintenance" },
+      { "name": "Settings", "icon": "cog", "screen": "Settings" }
+    ]
+  },
+  "accessibility": {
+    "min_touch_target_pt": 44,
+    "min_contrast_ratio_normal": 4.5,
+    "min_contrast_ratio_large": 3.0,
+    "screen_reader_support": true,
+    "dynamic_text_resize": true,
+    "reduce_motion": false
+  },
+  "language": "en",
+  "date_format": "ISO_8601",
+  "time_format": "24h",
+  "units": "metric",
+  "loading_state": "skeleton",
+  "pull_to_refresh": true,
+  "error_messages": {
+    "ble_disconnected": "Gateway disconnected. Check the device is powered and within range.",
+    "auth_failed": "Authentication failed. Verify the gateway is paired and try again.",
+    "decoder_missing": "No vehicle profile loaded. Select your vehicle in Settings.",
+    "db_error": "An error occurred reading vehicle data. This is not a vehicle issue.",
+    "export_error": "Could not export data. Check device storage availability."
+  }
+}

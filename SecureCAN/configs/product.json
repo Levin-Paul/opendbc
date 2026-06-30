@@ -1,0 +1,65 @@
+{
+  "product": {
+    "name": "SecureCAN",
+    "tagline": "Your vehicle. Your data. Your security.",
+    "description": "Offline-first automotive cybersecurity, vehicle integrity verification, and predictive maintenance platform.",
+    "version": "0.1.0",
+    "status": "pre-alpha",
+    "target_users": ["vehicle_owner", "fleet_operator", "workshop", "security_researcher"],
+    "platforms": {
+      "mobile": ["ios", "android"],
+      "gateway": ["esp32s3"],
+      "web": "planned_phase_4"
+    }
+  },
+  "mvp": {
+    "read_only": true,
+    "offline_only": true,
+    "target_vehicles": [
+      "honda_civic_2020",
+      "toyota_camry_2021",
+      "volkswagen_golf_2019"
+    ],
+    "features": [
+      "can_monitoring",
+      "signal_decoding",
+      "threat_detection",
+      "ecu_fingerprinting",
+      "sensor_plausibility",
+      "predictive_maintenance",
+      "alert_notifications",
+      "data_export"
+    ]
+  },
+  "supported_languages": ["en"],
+  "privacy": {
+    "data_collection": "none_by_default",
+    "cloud_required": false,
+    "user_owned_keys": true,
+    "telemetry": "opt_in_only"
+  },
+  "pricing": {
+    "mvp_hardware": 79.00,
+    "target_hardware": 89.00,
+    "subscription_model": "none",
+    "premium_features": []
+  },
+  "competitors": [
+    {
+      "name": "Generic OBD-II Scanners",
+      "weakness": "No security analysis, DTC-only"
+    },
+    {
+      "name": "Cloud Telematics (Mojio)",
+      "weakness": "Requires subscription, data uploaded to cloud"
+    },
+    {
+      "name": "Fleet Management (Samsara)",
+      "weakness": "Enterprise pricing, cloud-dependent"
+    },
+    {
+      "name": "Research Tools (CANtact)",
+      "weakness": "No consumer UI, no automated detection"
+    }
+  ]
+}

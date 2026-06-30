@@ -1,0 +1,83 @@
+{
+  "gateway": {
+    "name": "SecureCAN Gateway v1",
+    "status": "prototype",
+    "mcu": {
+      "model": "ESP32-S3",
+      "architecture": "Xtensa LX7 dual-core",
+      "clock_speed_mhz": 240,
+      "sram_kb": 512,
+      "flash_mb": 16,
+      "operating_temp_c": { "min": -40, "max": 85 }
+    },
+    "can_interface": {
+      "controller": "TWAI (built-in)",
+      "transceiver": "SN65HVD230",
+      "protocol": "CAN 2.0A / 2.0B",
+      "max_bitrate": 1000000,
+      "mvp_bitrate": 500000,
+      "isolation": "none_mvp"
+    },
+    "wireless": {
+      "ble": {
+        "version": "5.0",
+        "secure_connections": true,
+        "max_throughput_kbps": 80
+      },
+      "wifi": {
+        "standard": "802.11 b/g/n",
+        "band": "2.4 GHz"
+      }
+    },
+    "power": {
+      "source": "OBD-II pin 16 (12V)",
+      "regulator_12v_to_5v": "LM2596",
+      "regulator_5v_to_3v3": "AMS1117-3.3",
+      "current_active_ma": 200,
+      "current_standby_ma": 50,
+      "current_max_ma": 350
+    },
+    "mechanical": {
+      "pcb_dimensions_mm": { "width": 60, "height": 40, "thickness": 1.6 },
+      "enclosure_dimensions_mm": { "width": 70, "height": 50, "depth": 25 },
+      "weight_g": 50,
+      "enclosure_material": "ABS_polycarbonate",
+      "ingress_protection": "IP40",
+      "mounting": "OBD-II pass-through"
+    },
+    "safety": {
+      "write_enable": {
+        "type": "hardware_dip_switch",
+        "mvp_default": "disabled",
+        "hardware_enforced": true
+      },
+      "watchdog_timer_ms": 30000,
+      "termination_resistor_ohm": 120,
+      "termination_switchable": true
+    },
+    "bom": {
+      "estimated_cost_usd": 18.60,
+      "volume_10000_cost_usd": 13.50,
+      "components": [
+        { "name": "ESP32-S3 Module", "part": "ESP32-S3-DevKitC-1", "qty": 1, "cost": 8.00 },
+        { "name": "CAN Transceiver", "part": "SN65HVD230DR", "qty": 1, "cost": 1.50 },
+        { "name": "12V-5V Regulator", "part": "LM2596 Module", "qty": 1, "cost": 2.00 },
+        { "name": "3.3V Regulator", "part": "AMS1117-3.3", "qty": 1, "cost": 0.50 },
+        { "name": "CAN Termination", "part": "120-ohm resistor", "qty": 1, "cost": 0.10 },
+        { "name": "DIP Switch", "part": "SPDT 1-pole", "qty": 1, "cost": 0.30 },
+        { "name": "Status LEDs", "part": "0805 SMD", "qty": 4, "cost": 0.20 },
+        { "name": "Passives", "part": "Various 0603", "qty": 15, "cost": 0.50 },
+        { "name": "PCB", "part": "4-layer 60x40mm", "qty": 1, "cost": 2.00 },
+        { "name": "Enclosure", "part": "3D-printed ABS", "qty": 1, "cost": 1.50 },
+        { "name": "OBD-II Connector Male", "part": "SAE J1962", "qty": 1, "cost": 1.00 },
+        { "name": "OBD-II Connector Female", "part": "SAE J1962", "qty": 1, "cost": 1.00 }
+      ]
+    },
+    "future_improvements": [
+      "galvanic_isolation_ISO1042",
+      "CAN_FD_support_MCP2517FD",
+      "hardware_security_module",
+      "automotive_ethernet_support"
+    ]
+  }
+}

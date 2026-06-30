@@ -1,0 +1,121 @@
+{
+  "categories": [
+    {
+      "id": "threat_detection",
+      "name": "Threat Detection",
+      "description": "Security threats detected on the CAN bus",
+      "default_severity": "WARNING",
+      "icon": "shield_alert",
+      "sound": "alert_tone_01"
+    },
+    {
+      "id": "ecu_integrity",
+      "name": "ECU Integrity",
+      "description": "ECU fingerprint changes and integrity violations",
+      "default_severity": "WARNING",
+      "icon": "cpu",
+      "sound": "alert_tone_02"
+    },
+    {
+      "id": "sensor_anomaly",
+      "name": "Sensor Anomaly",
+      "description": "Sensor plausibility check failures",
+      "default_severity": "WARNING",
+      "icon": "sensor",
+      "sound": "alert_tone_02"
+    },
+    {
+      "id": "predictive_maintenance",
+      "name": "Predictive Maintenance",
+      "description": "Component wear predictions and maintenance recommendations",
+      "default_severity": "WARNING",
+      "icon": "wrench",
+      "sound": "alert_tone_03"
+    },
+    {
+      "id": "system",
+      "name": "System",
+      "description": "Gateway connection, authentication, and system status",
+      "default_severity": "INFO",
+      "icon": "information",
+      "sound": "none"
+    },
+    {
+      "id": "firewall",
+      "name": "CAN Firewall",
+      "description": "Firewall rule matches and violations",
+      "default_severity": "INFO",
+      "icon": "firewall",
+      "sound": "alert_tone_02"
+    },
+    {
+      "id": "simulation",
+      "name": "Attack Simulation",
+      "description": "Attack simulation results and progress",
+      "default_severity": "INFO",
+      "icon": "bug",
+      "sound": "none"
+    }
+  ],
+  "severity_levels": [
+    {
+      "id": "INFO",
+      "name": "Informational",
+      "description": "Routine information, no action required",
+      "color": "#58A6FF",
+      "requires_acknowledgment": false,
+      "persistent": false
+    },
+    {
+      "id": "WARNING",
+      "name": "Warning",
+      "description": "Potential issue, attention recommended",
+      "color": "#D29922",
+      "requires_acknowledgment": true,
+      "persistent": false
+    },
+    {
+      "id": "CRITICAL",
+      "name": "Critical",
+      "description": "Significant issue, action required",
+      "color": "#F85149",
+      "requires_acknowledgment": true,
+      "persistent": true
+    },
+    {
+      "id": "EMERGENCY",
+      "name": "Emergency",
+      "description": "Immediate action required, vehicle safety may be affected",
+      "color": "#FF0000",
+      "requires_acknowledgment": true,
+      "persistent": true
+    }
+  ],
+  "channels": {
+    "in_app": {
+      "enabled": true,
+      "min_severity": "INFO"
+    },
+    "push": {
+      "enabled": false,
+      "min_severity": "CRITICAL",
+      "note": "Push notifications require opt-in and are disabled by default"
+    },
+    "sound": {
+      "enabled": true,
+      "min_severity": "WARNING"
+    }
+  },
+  "retention_days": {
+    "INFO": 30,
+    "WARNING": 90,
+    "CRITICAL": 365,
+    "EMERGENCY": 365
+  },
+  "max_active_alerts": 100,
+  "grouping": {
+    "enabled": true,
+    "similar_window_minutes": 5,
+    "max_grouped": 10
+  }
+}

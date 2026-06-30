@@ -1,0 +1,107 @@
+{
+  "phases": [
+    {
+      "phase": 0,
+      "name": "Foundation",
+      "quarter": "Q3 2026",
+      "status": "in_progress",
+      "milestones": [
+        "ESP32 CAN bus gateway prototype with BLE streaming",
+        "React Native app scaffold with BLE connectivity",
+        "OpenDBC decoder adapter for 3 vehicle profiles",
+        "Real-time signal dashboard",
+        "CAN frame capture and local storage",
+        "Basic authentication handshake",
+        "Project documentation and constitution"
+      ],
+      "completion_percentage": 10
+    },
+    {
+      "phase": 1,
+      "name": "MVP",
+      "quarter": "Q4 2026",
+      "status": "planned",
+      "milestones": [
+        "ECU fingerprinting engine",
+        "ECU integrity snapshot and comparison",
+        "Sensor plausibility checks",
+        "Attack detection engine",
+        "CAN firewall rule engine",
+        "Predictive maintenance — battery voltage",
+        "Predictive maintenance — DPF pressure",
+        "Alert notification system",
+        "Configuration file import/export",
+        "Firmware OTA update mechanism",
+        "Vehicle adapter for 5 additional makes"
+      ],
+      "completion_percentage": 0
+    },
+    {
+      "phase": 2,
+      "name": "Integrity & Maintenance",
+      "quarter": "Q1 2027",
+      "status": "planned",
+      "milestones": [
+        "Component integrity verification with crypto baselines",
+        "Brake pad wear estimation",
+        "Tyre pressure trend analysis",
+        "Coolant temperature variance monitoring",
+        "Fleet multi-vehicle dashboard",
+        "Historical data replay and analysis",
+        "Maintenance report export (PDF/CSV)",
+        "Custom maintenance rule editor"
+      ],
+      "completion_percentage": 0
+    },
+    {
+      "phase": 3,
+      "name": "Attack Simulation",
+      "quarter": "Q2 2027",
+      "status": "planned",
+      "milestones": [
+        "Offline attack simulation engine",
+        "20+ pre-built attack scenarios",
+        "Simulation result report generation",
+        "What-if analysis mode",
+        "Custom attack script editor",
+        "Simulation replay against recorded traffic"
+      ],
+      "completion_percentage": 0
+    },
+    {
+      "phase": 4,
+      "name": "Advanced Features",
+      "quarter": "Q3 2027",
+      "status": "planned",
+      "milestones": [
+        "CAN bus topology mapping",
+        "ECU conversation analysis and profiling",
+        "Statistical anomaly detection (ML baseline)",
+        "Optional encrypted cloud backup",
+        "Web dashboard companion",
+        "Third-party API",
+        "Hardware security module support"
+      ],
+      "completion_percentage": 0
+    },
+    {
+      "phase": 5,
+      "name": "Scale",
+      "quarter": "Q4 2027",
+      "status": "planned",
+      "milestones": [
+        "Vehicle adapter SDK for community",
+        "Plugin architecture for detection rules",
+        "CAN FD support",
+        "Automotive Ethernet support",
+        "Multi-gateway support",
+        "OBD-II PID auto-discovery",
+        "ISO 21434 regulatory compliance"
+      ],
+      "completion_percentage": 0
+    }
+  ],
+  "current_phase": 0,
+  "next_release": "0.1.0-alpha",
+  "release_cadence": "quarterly"
+}

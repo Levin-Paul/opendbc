@@ -1,0 +1,57 @@
+{
+  "architecture": {
+    "pattern": "layered",
+    "data_flow": "unidirectional",
+    "state_management": "react_context_use_reducer"
+  },
+  "layers": [
+    {
+      "name": "UI",
+      "technologies": ["react_native", "typescript"],
+      "components": ["Dashboard", "Alerts", "Security", "Maintenance", "Settings"]
+    },
+    {
+      "name": "State Management",
+      "technologies": ["react_context", "use_reducer"],
+      "contexts": ["VehicleContext", "AlertContext", "ConfigContext", "AuthContext", "SessionContext"]
+    },
+    {
+      "name": "Services",
+      "technologies": ["typescript", "native_modules"],
+      "services": [
+        "BLEService",
+        "DecoderService",
+        "ThreatDetectionService",
+        "IntegrityService",
+        "PredictiveMaintenanceService",
+        "CANFirewallService",
+        "AttackSimulatorService",
+        "ExportService",
+        "ConfigService"
+      ]
+    },
+    {
+      "name": "Data",
+      "technologies": ["sqlite", "json", "filesystem"],
+      "storage": ["SQLite", "ConfigFiles", "FileStorage"]
+    }
+  ],
+  "communication": {
+    "primary_transport": "ble_5_0",
+    "secondary_transport": "wifi_tcp",
+    "encryption": "le_secure_connections",
+    "authentication": "ed25519_challenge_response"
+  },
+  "decoder_layer": {
+    "pattern": "adapter",
+    "base_class": "BaseDecoder",
+    "adapters": ["HondaAdapter", "ToyotaAdapter", "VWAdapter", "GenericAdapter"],
+    "source": "opendbc_submodule_readonly"
+  },
+  "threading": {
+    "ui_thread": "javascript",
+    "async_threads": "service_layer",
+    "native_modules": "decoder_heavy_operations",
+    "db_queue": "dedicated_sqlite_queue"
+  }
+}

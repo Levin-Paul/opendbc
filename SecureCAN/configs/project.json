@@ -1,0 +1,53 @@
+{
+  "project_name": "SecureCAN",
+  "version": "0.1.0",
+  "codename": "Sentinel",
+  "status": "pre-alpha",
+  "repository": {
+    "url": "https://github.com/securecan/securecan",
+    "branch_default": "main",
+    "branch_develop": "develop"
+  },
+  "team": {
+    "product_owner": "TBD",
+    "tech_lead": "TBD",
+    "engineering": [],
+    "design": [],
+    "security": []
+  },
+  "license": "Proprietary",
+  "copyright": "2026 SecureCAN",
+  "documentation": {
+    "root": "README.md",
+    "constitution": "PRODUCT_CONSTITUTION.md",
+    "roadmap": "ROADMAP.md",
+    "changelog": "CHANGELOG.md",
+    "docs_dir": "docs/",
+    "configs_dir": "configs/",
+    "prompts_dir": "prompts/",
+    "memory_dir": "memory/"
+  },
+  "dependencies": {
+    "opendbc": {
+      "type": "git_submodule",
+      "url": "https://github.com/commaai/opendbc",
+      "read_only": true,
+      "pinned_commit": "<TODO_COMMIT_SHA>"
+    },
+    "esp_idf": {
+      "version": ">=5.0",
+      "type": "framework"
+    },
+    "react_native": {
+      "version": ">=0.73"
+    }
+  },
+  "build": {
+    "app": "npm run build",
+    "firmware": "cd firmware/esp32 && idf.py build",
+    "decoder_data": "python tools/convert_dbc.py"
+  },
+  "release_channels": ["development", "beta", "production"],
+  "current_sprint": 1,
+  "sprint_duration_days": 14
+}
